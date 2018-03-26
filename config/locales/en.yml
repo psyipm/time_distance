@@ -1,0 +1,12 @@
+en:
+  datetime:
+    time_distance:
+      units:
+        seconds: '%{count} seconds'
+        minutes: '%{count} minutes'
+        hours: '%{count} hours'
+        days: '%{count} days'
+        weeks: '%{count} weeks'
+        months: '%{count} month'
+        years: '%{count} years'
+      ago: 'ago'
