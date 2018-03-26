@@ -16,7 +16,7 @@ module TimeDistance
 
     DEFAULTS = {
       format: [:months, :days, :hours, :minutes],
-      translation_scope: 'time_distance'
+      translation_scope: 'datetime.time_distance'
     }.freeze
 
     attr_reader :options
