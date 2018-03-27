@@ -45,7 +45,7 @@ module TimeDistance
     def to_a
       options[:format].map do |unit|
         value = units[unit].to_i
-        next unless value.positive?
+        next unless value > 0
 
         I18n.t(unit, scope: [options[:translation_scope], :units], count: value)
       end
