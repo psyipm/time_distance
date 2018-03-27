@@ -27,13 +27,11 @@ module TimeDistance
       @options = DEFAULTS.merge(options)
 
       @seconds = @time_from - @time_to
-
-      @negative = @seconds.negative?
     end
 
     def to_s
       array = to_a.compact
-      array << I18n.t(:ago, scope: options[:translation_scope]) if @negative
+      array << I18n.t(:ago, scope: options[:translation_scope]) if negative?
 
       array.join(' ')
     end
@@ -51,6 +49,10 @@ module TimeDistance
 
         I18n.t(unit, scope: [options[:translation_scope], :units], count: value)
       end
+    end
+
+    def negative?
+      @seconds.to_i < 0
     end
 
     def desc_sorted_unit_format
